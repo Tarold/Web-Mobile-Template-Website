@@ -97,16 +97,23 @@ nav {
 header {
   display: grid;
   grid-template-columns: 1fr 75% 1fr;
+  padding: 75px 0 100px 0;
 }
 .headerContent {
   grid-column: 2/3;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
+.headerContent > * {
+  margin: 12px;
+}
+
 .discount {
-  display: inline;
   background-color: #f2f9eb;
+  padding: 8px 16px 8px 0;
+  border-radius: 100px;
 }
 
 .discountPercent,
@@ -116,6 +123,9 @@ header {
 
 .discountPercent {
   background-color: #81c43b;
+  padding: 6px 16px;
+  border-radius: 100px;
+  color: #fff;
 }
 
 .headerTitle {
@@ -123,7 +133,11 @@ header {
   font-size: 64px;
   line-height: 72px;
   color: var(--color-darkgrey);
-  text-align: center;
+  width: 75%;
+}
+
+.headerText {
+  width: 50%;
 }
 
 .headerText,
@@ -133,27 +147,32 @@ header {
   line-height: 24px;
 }
 
-.headerText {
-  text-align: center;
-}
-
 .enterEmail input {
   background-color: #fff;
+  border: 1px solid #e1e5ea;
+  border-radius: 4px 0px 0px 4px;
+  font-size: 14px;
+  color: #97a5b5;
   float: left;
+  padding: 18px 24px;
 }
 .enterEmail button {
+  padding: 18px 45px;
   float: left;
-}
-.teamsSection {
-  width: 100%;
+  background-color: var(--color-violet);
+  color: #fff;
+  border: 1px solid #794cff;
+  border-radius: 0px 4px 4px 0px;
 }
 .graph {
-  width: 100%;
+  width: 85%;
+  margin-bottom: 46px;
 }
 .teamsText {
   text-align: center;
 }
 .teamsList {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
