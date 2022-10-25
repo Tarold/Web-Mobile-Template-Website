@@ -1,26 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+:root {
+  --color-darkgrey: #35414b;
+  --color-violet: #794cff;
+}
+
 * {
   box-sizing: border-box;
 }
-:root {
-  --color-darkgrey: #35414b;
-}
+
 body {
   color: #4e5a65;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
 }
-/* body > * {
-  border: 2px solid red;
-} */
+
 a {
   text-decoration: none;
   color: inherit;
 }
 nav {
-  display: flex;
+  padding: 46px 0;
+  background-color: #fff;
+}
+.navContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: var(--color-darkgrey);
+  flex-wrap: nowrap;
+  align-items: center;
+  font-size: 16px;
 }
 
-nav li {
+.trialButton {
+  padding: 16px 24px;
+  background-color: #ece6ff;
+  border-radius: 4px;
+  color: var(--color-violet);
+  margin-left: 16px;
+  white-space: nowrap;
+}
+
+.menu {
+  align-items: center;
+  white-space: nowrap;
+  background-color: #fff;
+  padding: 12px 0;
+}
+
+.menu > li {
   display: inline;
+  padding: 10px;
+}
+
+.menu > li::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  content: " \f078";
+  font-size: 1px;
+}
+
+.menu > li:nth-child(3):after,
+.menu > li:nth-child(5):after {
+  content: "";
+}
+
+.burgerMenu {
+  margin-left: auto;
+}
+.burgerMenu:hover > .burger + .menu {
+  top: 0;
+}
+
+.burger,
+.menu > .logInPhone {
+  display: none;
+}
+.burger {
+  width: 30px;
+  text-align: center;
+}
+.burger > i {
+  font-size: 30px;
+}
+.burger > p {
+  font-size: 10px;
+}
+
+.logIn {
+  white-space: nowrap;
+  margin-left: auto;
 }
 
 header {
@@ -92,12 +163,17 @@ main section:nth-child(odd) {
   background-color: #fbfafe;
   border-top: 1px solid #f0ebfa;
   border-bottom: 1px solid #f0ebfa;
+  padding: 100px 0;
+}
+main section:nth-child(even) {
+  padding: 67px 0;
 }
 .functionSection,
 .opportunitiesSection,
 .graphSection,
 .commentsSection,
-footer {
+footer,
+nav {
   display: grid;
   grid-template-columns: 1fr 75% 1fr;
 }
@@ -105,7 +181,8 @@ footer {
 .functionContent,
 .graphContent,
 .commentsContent,
-.footerContent {
+.footerContent,
+.navContent {
   grid-column: 2/3;
 }
 
@@ -218,8 +295,47 @@ footer {
   justify-content: space-around;
   align-items: center;
 }
-@media screen and (max-width: 768px) {
-  body {
-    grid-template-columns: 1fr;
+
+@media screen and (max-width: 1225px) {
+  .logIn {
+    display: none;
   }
+  .menu {
+    position: absolute;
+    transform: translateY(0);
+    top: -250%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+  }
+
+  .burger,
+  .menu > .logInPhone {
+    display: inline-block;
+  }
+  .navContent {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* .functionSection,
+  .opportunitiesSection,
+  .graphSection,
+  .commentsSection,
+  footer,
+  nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .opportunitiesContent,
+  .functionContent,
+  .graphContent,
+  .commentsContent,
+  .footerContent,
+  .navContent {
+    grid-column: 1/2;
+  }*/
 }
